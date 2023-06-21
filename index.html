@@ -22,14 +22,15 @@
             display: flex;
             flex-flow: column nowrap;
             gap: 1.5rem;
-        }
+        }  
     </style>
+    <script src="script.js" defer></script>  
 </head>
 <body>
-    <h1>VCF File Uploader</h1>
+    <h1>VCF File Uploader / Parser</h1>
     <form id="uploadForm" enctype="multipart/form-data">
         <input type="file" id="myFiles" multiple />
-        <button>Submit</button>
+        <button id="generate">Submit</button>
     </form>
     <h2></h2>
     <h3></h3>
@@ -67,5 +68,17 @@
             sendFiles()
         })
     </script>
+
+    <form>
+        <label>
+            Search for a SNP by its ID:
+            <input type="text" id="snp_id" placeholder="rs0000000" required/>
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>
+        <span id="result"></span>
+    </h2>
 </body>
 </html>
